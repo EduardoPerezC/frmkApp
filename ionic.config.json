@@ -1,0 +1,7 @@
+{
+  "name": "frmkApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
