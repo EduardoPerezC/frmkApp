@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { F4mdAbstractNavigationComponent} from '@f4md/component'
+import { F4mdAppConfigurationService, F4mdFeatureManager } from '@f4md/core';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,17 @@ import { F4mdAbstractNavigationComponent} from '@f4md/component'
 })
 export class AppComponent extends F4mdAbstractNavigationComponent{
 
+    constructor(featureManager:F4mdFeatureManager, private configService:F4mdAppConfigurationService){
+      super(featureManager);
+    }
+
     selectedIndex = -1
     appPages = this.getData()
+    menuTitle = this.getMenuTitle()
+    
+    getMenuTitle(){
+      return this.configService.getPropertyValue("menu-title")
+    }
     
     getData(){
       return this.defaultNavigationItems.map(navItem => {

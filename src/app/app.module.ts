@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { F4mdAppRoutingModule } from '@f4md/router';
 import { AuthenticationPluginModule } from '@myorg/authentication';
 import { HttpClientModule} from '@angular/common/http'
-import { F4mdHttpModule} from '@f4md/core'
+import { F4mdHttpModule,F4mdAppConfigurationModule} from '@f4md/core'
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +19,7 @@ import { F4mdHttpModule} from '@f4md/core'
     IonicModule.forRoot(),
     HttpClientModule,
     F4mdHttpModule.forRoot(),
+    F4mdAppConfigurationModule.forRoot(),
     AuthenticationPluginModule, 
     HomePluginModule,
     WishManagerPluginModule,
